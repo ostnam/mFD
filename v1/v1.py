@@ -116,8 +116,11 @@ f = open(DATA_FILE, "r+") # open the data file
 f.truncate(0) # deletes its content
 f.write("time, alpha, eas, radaralt, verticalspeed, power, pitch \n") # first lign of the data file, labelling the content of the columns
 for i in data:
-    current_line = i
-    for j in current_line:
-        f.write(str(j))
-        f.write(", ")
-    f.write("\n")
+        current_line = i
+        current_row = 0
+        for j in current_line:
+                f.write(str(j))
+                if current_row != 6:
+                        f.write(", ")
+                        current_row = current_row + 1
+        f.write("\n")
