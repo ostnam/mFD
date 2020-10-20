@@ -112,7 +112,7 @@ while wow_sum == False:
         data.append(current_data)
         last_data_time = current_time
 
-f = open(DATA_FILE, "r+") # open the data file 
+f = open(DATA_FILE, "rw") # open the data file 
 f.truncate(0) # deletes its content
 f.write("time, alpha, eas, radaralt, verticalspeed, power, pitch \n") # first lign of the data file, labelling the content of the columns
 for i in data:
